@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Earn With AGS</title>
+     
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: rgba(245, 113, 5, 0.897);
+            background-image:none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .form-container {
+            background-color: rgb(249, 249, 250);
+            padding: 35px;
+            border: 2px solid rgb(17, 254, 72);
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid green;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 50%;
+            background-color: rgb(16, 19, 112);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+       .custom bg {
+          padding: 1px;
+          width: 100px;
+          text-align: center;
+          
+       }
+
+       
+    </style>
+    <style>
+          
+        .color1 {
+          color: rgb(6, 37, 237);
+        }
+        
+         
+        .color2 {
+          color: rgb(244, 130, 17);
+        }
+      </style>
+</head>
+<body>
+    
+    <div class="form-container"> 
+        <h1>
+            <span class="color1">Angel</span><span class="color2" >One</span>
+          </h1>
+          <div class="custom bg">
+        <h3 style="background-color: rgb(4, 168, 50); color: white;  border-radius: 25px;"><centet>Offer Active </centet></h3>
+      </div>
+        <form id="myForm" method="post" name="angel">
+          <input type="hidden" id="date_time" name="date_time" value="">
+            <div class="form-group">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="vendor">Vendor Name:</label>
+                <input type="text" id="vendor" name="vendor"  required>
+            </div>
+
+            
+            <br>
+            <button  type="submit" id="submitButton">Continue</button>
+        </form>
+        <br>
+        <br>
+    </div>
+    <div class="form-group">
+
+      For Resume Application
+        <a href="https://tinyurl.com/2p8wrg6w">click here</a>
+
+    </div>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzFT6yGz1gm_eZzrzUyUwpxvZzoKTZwlqMslc9Jd7aphuIY5Sr0DcATQWBTQkz3xM5Y3Q/exec'
+        const form = document.forms['angel']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    // Perform form validation here (if needed)
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("mobile").value;
+    if (!name || !email) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // If form is valid, proceed to redirect
+    // Replace 'next-page-url' with the URL of the next page you want to redirect to
+    window.location.href = "https://tinyurl.com/2p8wrg6w";
+  });
+</script>
+ 
+<script>
+    // JavaScript to set the current date and time value in the hidden field
+    document.addEventListener("DOMContentLoaded", function () {
+        var dateTimeField = document.getElementById("date_time");
+        var currentDate = new Date();
+        var year = currentDate.getFullYear();
+        var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+        var day = currentDate.getDate().toString().padStart(2, '0');
+        var hours = currentDate.getHours().toString().padStart(2, '0');
+        var minutes = currentDate.getMinutes().toString().padStart(2, '0');
+        var seconds = currentDate.getSeconds().toString().padStart(2, '0');
+        var formattedDateTime = month + '/' + day + '/' + year + ', ' + hours + ':' + minutes + ':' + seconds;
+        dateTimeField.value = formattedDateTime;
+    });
+</script>
+
+
+
+</body>
+</html>
